@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap');
+/* Montserrat - Titulos - Peso 700*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap');
+/* Lato - Texto Corrido - Peso 400 */
+
+:root{
+    --cor-principal: #1a365d;
+    --cor-apoio-azul: #718096;
+    --cor-apoio-verde: #7f9f7f;
+    --cor-fundo: #f7fafc;
+    --destaque: #c69214;
+    --cinza: #e2e8f0;
+    --fonte-principal: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Lato', sans-serif;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    
+    box-sizing: border-box;
+}
