@@ -18,10 +18,19 @@
             <div class="form">
                 <input type="text" placeholder="Usuário" id="usuario">
                 <input type="password" placeholder="Senha" id="senha">
-                <button type="submit" id="botao-login"> Login </button>
+                <button type="submit" class="btn-abrir" id="abrirModal" > Login </button>
+            </div>
+
+            <div class="modal-overlay" id="modalOverlay">
+                <div class="modal-content">
+                    <button class="btn-fechar" id="fecharModal">&times;</button>
+                    <h2>Olá, <span>(Nome do Usuário)</span>!</h2>
+                    <p>Bem-Vindo de volta, espero que seu dia de trabalho seja maravilhoso. 💕</p>
+                    <a href="../html/index.html">Continuar</a>
+                </div>
             </div>
         </div>
     </main>
-    <script href="../script/login.js"></script>
+    <script src="../script/login.js"></script>
 </body>
 </html>
