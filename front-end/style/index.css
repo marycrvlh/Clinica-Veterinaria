@@ -65,7 +65,7 @@ header{
     padding: 30px;
     font-family: var(--fonte-secundaria);
     font-weight: 400;
-    font-size: 19px;
+    font-size: 16px;
     color: var(--claro);
     transition: color 0.3s ease;
 }
@@ -81,14 +81,14 @@ header{
     margin-right: 20px;
     font-family: var(--fonte-secundaria);
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .perfil .user{
     background: var(--claro);
     padding: 2px;
     border-radius: 100px;
-    width: 40px;
+    width: 35px;
     height: auto;
 }
 
@@ -155,4 +155,43 @@ header{
     object-fit: cover;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
     mask-image: linear-gradient(to right, transparent 0%, black 40%);
+}
+
+/* botões de funcionalidades */
+.container-opcoes{
+    background: var(--claro);
+    border: 1px solid var(--cinza);
+    margin: 70px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.linha-botoes{
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.botao{
+    background: var(--cor-apoio-azul);
+    color: var(--cor-principal);
+    padding: 30px;
+    align-items: center;
+    height: 150px;
+    border-radius: 8px;
+    border: 1.5px solid #5f6c80;
+    box-shadow: 0px 5px rgba(0, 0, 0, 0.20);
+}
+
+.botao a{
+    text-decoration: none;
+    outline: none;
+    color: var(--cor-principal);
+    font-family: var(--fonte-principal);
+    font-weight: 700;
 }
