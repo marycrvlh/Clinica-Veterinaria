@@ -28,3 +28,21 @@ overlay.addEventListener('click', (evento) => {
         overlay.classList.remove('active');
     }
 });
+
+abrirBtn.addEventListener('click', () => {
+    const nomeDigitado = campoUsuario.value.trim();
+
+    if (nomeDigitado !== "") {
+        // SALVA O NOME NO NAVEGADOR
+        localStorage.setItem('usuarioLogado', nomeDigitado);
+        
+        nomeNoModal.textContent = nomeDigitado;
+        overlay.classList.add('active');
+    } else {
+        alert("Por favor, digite o nome de usuário!");
+    }
+});
+
+fecharBtn.addEventListener('click', () => { overlay.classList.remove('active'); });
+overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('active'); });
+

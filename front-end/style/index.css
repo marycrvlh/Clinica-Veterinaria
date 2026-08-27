@@ -1,0 +1,158 @@
+/* configuração geral de todos os styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap');
+/* Montserrat - Titulos - Peso 700*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap');
+/* Lato - Texto Corrido - Peso 400 */
+
+:root{
+    --cor-principal: #1a365d;
+    --cor-apoio-azul: #718096;
+    --cor-apoio-verde: #7f9f7f;
+    --cor-fundo: #E1E8F2;
+    --destaque: #c69214;
+    --cinza: #C3C3C3;
+    --claro: #F7FAFC;
+    --fonte-principal: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Lato', sans-serif;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--cor-fundo);
+    min-height: 100vh;
+}
+
+/* configuração da página de inicio */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a365d;
+    color: var(--claro);
+    font-family: var(--fonte-principal);
+    font-weight: 700;
+    padding: 20px;
+    width: 100%;
+    flex: 1;
+    padding-top: 25px;
+}
+
+.logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.logo img{
+    width: 40px;
+    height: 40px;
+}
+
+.opcoes{
+    display: flex;
+    align-items: center;
+}
+
+.opcoes a{
+    text-decoration: none;
+    outline: none;
+    padding: 30px;
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 19px;
+    color: var(--claro);
+    transition: color 0.3s ease;
+}
+
+.opcoes a:hover{
+    color: #7f9f7f;
+}
+
+.perfil{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-right: 20px;
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.perfil .user{
+    background: var(--claro);
+    padding: 2px;
+    border-radius: 100px;
+    width: 40px;
+    height: auto;
+}
+
+.perfil .botao-sair{
+    cursor: pointer;
+    width: 25px;
+    height: auto;
+}
+
+/* hero principal */
+
+/* banner */
+.banner {
+    margin: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1a365d; 
+    border-radius: 20px;
+    overflow: hidden;
+    height: 300px;
+}
+
+/* lado do texto */
+.banner-content {
+    color: var(--claro);
+    font-family: var(--fonte-principal);
+    font-size: 50px;
+    padding: 0 40px;
+    flex: 1;
+    margin-left: 50px;
+}
+
+.banner-content h1 {
+    font-size: 50px;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.banner-content span {
+    color: #9FC6FF;
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+
+}
+
+.banner-content p {
+    font-size: 18px;
+    color: var(--cinza);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* lado da Imagem com o efeito de transição */
+.banner-image {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
+    mask-image: linear-gradient(to right, transparent 0%, black 40%);
+}

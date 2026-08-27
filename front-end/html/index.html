@@ -3,23 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../style/index.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Clinica Veterinaria - Sistema interno</title>
 </head>
 <body>
 
     <header>
+        <div class="logo">
+            <img src="../image/paw-heart.png" alt="Icone da Logo">
+            <h2> VetClinic </h2>
+        </div>
 
+        <div class="opcoes">
+            <nav>
+                <a href="../html/index.html" id="inicio"> Inicio </a>
+                <a href="../html/cadastroDono.html"> Cadastrar Dono </a>
+                <a href="../html/cadastroAnimal.html"> Cadastrar Animal </a>
+                <a href="../html/consultas.html"> Consultar Cadastros </a>
+            </nav>
+        </div>
+
+        <div class="perfil">
+            <img src="../image/user.png" alt="Icone de perfil" class="user">
+            <p> Nome do Usuário </p>
+            <abbr title="Sair"> <img src="../image/exit.png" alt="Icone de Sair" class="botao-sair"> </abbr>
+        </div>
     </header>
 
     <main>
+        <!-- banner -->
+         <div class="banner" id="#inicio">
+            <div class="banner-content">
+                <h1> Cadastro de <br> <span> Donos & Animais </span></h1>
+                <p> Sistema de gerenciamento para clinica Veterinária. <br>
+                Garante agilidade e precisão para as consultas. </p>
+            </div>
+            
+            <div class="banner-image">
+                <img src="../image/cat and dog hero.jpg" alt="Imagem de Gato e Cachorro juntos">
+            </div>
+        </div>
+
+        <!-- botões para as funcionalidades -->
+         <div class="container-opcoes">
+            <div class="linha-botoes">
+                <div class="botao">
+                    <a href="../html/cadastroDono.html">
+                        Cadastrar Novo Dono ➔
+                    </a>
+                </div>
+            </div>
+         </div>
 
         
     </main>
     
 
 
-    <script href="./script.js"></script>
+    <script src="../script/index.js"></script>
 </body>
 </html>
