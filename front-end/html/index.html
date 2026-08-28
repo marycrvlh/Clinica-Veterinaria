@@ -17,7 +17,7 @@
 
         <div class="opcoes">
             <nav>
-                <a href="../html/index.html" id="inicio"> Inicio </a>
+                <a href="../html/index.html" id="inicio" class="ativo"> Inicio </a>
                 <a href="../html/cadastroDono.html"> Cadastrar Dono </a>
                 <a href="../html/cadastroAnimal.html"> Cadastrar Animal </a>
                 <a href="../html/consultas.html"> Consultar Cadastros </a>
@@ -33,7 +33,7 @@
 
     <main>
         <!-- banner -->
-         <div class="banner" id="#inicio">
+        <div class="banner" id="#inicio">
             <div class="banner-content">
                 <h1> Cadastro de <br> <span> Donos & Animais </span></h1>
                 <p> Sistema de gerenciamento para clinica Veterinária. <br>
@@ -46,33 +46,170 @@
         </div>
 
         <!-- botões para as funcionalidades -->
-         <div class="container-opcoes">
+        <div class="container-opcoes">
+            <h2> Ações rápidas <br>
+                <span> Gerencie rapidamente donos, animais e consultas </span>
+            </h2>
             <div class="linha-botoes">
                 <div class="botao">
+                    <div class="botao-icone">
+                        <img src="../image/user-add.png" alt="Icone de User">
+                    </div>
                     <a href="../html/cadastroDono.html">
-                        Cadastrar Novo Dono ➔
+                        Cadastrar Dono <span class="seta">➔</span>
                     </a>
-                    <p>Esta funcionalidade permite registrar no sistema as informações de identificação e contato do tutor responsável, como nome, CPF, telefone e endereço, servindo como base para a emissão de cobranças, notificações de consultas e para a vinculação legal de todos os animais que pertencem a ele.</p>
+                    <p> Adicione um novo tutor ao sistema. </p>
                 </div>
 
                 <div class="botao">
+                    <div class="botao-icone">
+                        <img src="../image/paw-button.png" alt="Icone de Patinha">
+                    </div>
                     <a href="../html/cadastroAnimal.html">
-                        Cadastrar Novo Animal ➔
+                        Cadastrar Novo Animal <span class="seta">➔</span>
                     </a>
-                    <p>Destina-se ao cadastramento do perfil clínico do pet, coletando dados essenciais como nome, espécie, raça, idade e sexo para a abertura do prontuário médico, exigindo a vinculação obrigatória a um tutor já cadastrado para garantir a organização do histórico de atendimentos.</p>
+                    <p> Adicione um novo animal ao sistema.</p>
                 </div>
 
                 <div class="botao">
-                    <a href="../html/consultas.html.html">
-                        Consultar Cadastros ➔
+                    <div class="botao-icone">
+                        <img src="../image/id-badge (1).png" alt="Icone de Crachá">
+                    </div>
+                    <a href="../html/consultas.html">
+                        Consultar Cadastros <span class="seta">➔</span>
                     </a>
+                    <p> Veja os cadastros existentes no sistema. </p>
                 </div>
             </div>
-         </div>
+        </div>
+
+        <!-- painel de estatistica -->
+        <!-- futuramente será atualizado conforme o banco de dados -->
+        <section class="estatisticas">
+            <div class="titulo-estatisticas">
+                <h2>Estatísticas <br>
+                    <span> Resumo geral do sistema. </span></h2>
+            </div>
+
+            <div class="cards-estatisticas">
+
+                <div class="card-estatistica">
+                    <div class="icone icone-azul">
+                        <img src="../image/user-add.png">
+                    </div>
+
+                    <div class="texto">
+                        <h3>128</h3>
+                        <p>Donos Cadastrados</p>
+                    </div>
+                </div>
+
+                <div class="card-estatistica">
+                    <div class="icone icone-verde">
+                        <img src="../image/paw-button.png">
+                    </div>
+
+                    <div class="texto">
+                        <h3>245</h3>
+                        <p>Animais Cadastrados</p>
+                    </div>
+                </div>
+
+                <div class="card-estatistica">
+                    <div class="icone icone-dourado">
+                        <img src="../image/calendar (1).png">
+                    </div>
+
+                    <div class="texto">
+                        <h3>12</h3>
+                        <p>Consultas Hoje</p>
+                    </div>
+                </div>
+
+                <div class="card-estatistica">
+                    <div class="icone icone-marinho">
+                        <img src="../image/user-md.png">
+                    </div>
+
+                    <div class="texto">
+                        <h3>5</h3>
+                        <p>Veterinários</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         
     </main>
     
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo-image">
+                    <img src="../image/paw-heart.png" alt="Icone da Logo">
+                    <h2>VetClinic</h2>
+                </div>
+                <p>Sistema de gerenciamento para clínicas veterinárias. Agilidade e precisão no cuidado com os animais.</p>
+
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M13 22v-9h3l1-4h-4V7c0-1.1.3-1.8 1.9-1.8H17V1.1C16.6 1 15.4 1 14 1c-3 0-5 1.8-5 5.2V9H6v4h3v9h4z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1.1.05 1.8.2 2.4.5.6.3 1.1.6 1.6 1.1.5.5.8 1 1.1 1.6.3.6.4 1.3.5 2.4.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 1.1-.2 1.8-.5 2.4-.3.6-.6 1.1-1.1 1.6-.5.5-1 .8-1.6 1.1-.6.3-1.3.4-2.4.5-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1.1-.1-1.8-.2-2.4-.5-.6-.3-1.1-.6-1.6-1.1-.5-.5-.8-1-1.1-1.6-.3-.6-.4-1.3-.5-2.4C2 15 2 14.7 2 12s0-3 .1-4.1c.1-1.1.2-1.8.5-2.4.3-.6.6-1.1 1.1-1.6.5-.5 1-.8 1.6-1.1.6-.3 1.3-.4 2.4-.5C9 2 9.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.2A3.2 3.2 0 1112 8.8a3.2 3.2 0 010 6.4zm5.2-8.4a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/></svg>
+                    </a>
+                    <a href="#" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.4 3.8 3.4.5.2.9.4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <div class="footer-links">
+                    <a href="../html/index.html">Início</a>
+                    <a href="../html/cadastroDono.html">Cadastrar Dono</a>
+                    <a href="../html/cadastroAnimal.html">Cadastrar Animal</a>
+                    <a href="../html/consultas.html">Consultar Cadastros</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul class="footer-contato">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+                        <span>Av. das Clínicas, 123 - Piracicaba/SP</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.6 5 6.4 6.4l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+                        <span>(19) 99999-0000</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>contato@vetclinic.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Horário de Atendimento</h4>
+                <div class="footer-horario">
+                    <div class="linha-horario"><span>Seg - Sex</span><span>8h às 19h</span></div>
+                    <div class="linha-horario"><span>Sábado</span><span>9h às 13h</span></div>
+                    <div class="linha-horario"><span>Domingo</span><span>Fechado</span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p>© 2026 VetClinic. Todos os direitos reservados.</p>
+                <span class="selo-versao">Versão 1.0</span>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="../script/index.js"></script>

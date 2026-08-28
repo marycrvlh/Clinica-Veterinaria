@@ -10,25 +10,55 @@
 <body>
     <main>
         <div class="container">
-            <div class="logo">
-                <img src="../image/pet.png" alt="Icone da Logo">
-                <h2> Bem-Vindo ! </h2>
+
+            <!-- painel decorativo -->
+            <div class="painel-lateral">
+                <div class="painel-conteudo">
+                    <div class="logo">
+                        <img src="../image/pet.png" alt="Icone da Logo">
+                        <h2>VetClinic</h2>
+                    </div>
+                    <h1>Cuidando de quem <br> você mais ama. 🐾</h1>
+                    <p>Acesse o sistema para gerenciar donos, animais e consultas com agilidade e segurança.</p>
+                </div>
             </div>
 
-            <div class="form">
-                <input type="text" placeholder="Usuário" id="usuario">
-                <input type="password" placeholder="Senha" id="senha">
-                <button type="submit" class="btn-abrir" id="abrirModal" > Login </button>
+            <!-- painel do formulário -->
+            <div class="painel-form">
+                <div class="logo-mobile">
+                    <img src="../image/pet.png" alt="Icone da Logo">
+                    <h2>VetClinic</h2>
+                </div>
+
+                <h2 class="titulo-form">Bem-vindo de volta!</h2>
+                <p class="subtitulo-form">Entre com suas credenciais para acessar o sistema.</p>
+
+                <div class="form">
+                    <label for="usuario">Usuário</label>
+                    <div class="input-grupo">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2.5c-3.3 0-10 1.7-10 5V22h20v-2.5c0-3.3-6.7-5-10-5z"/></svg>
+                        <input type="text" placeholder="Digite seu usuário" id="usuario">
+                    </div>
+
+                    <label for="senha">Senha</label>
+                    <div class="input-grupo">
+                        <svg viewBox="0 0 24 24"><path d="M17 8V7a5 5 0 00-10 0v1H5v13h14V8h-2zM9 7a3 3 0 016 0v1H9V7zm3 8a2 2 0 110 4 2 2 0 010-4z"/></svg>
+                        <input type="password" placeholder="Digite sua senha" id="senha">
+                    </div>
+
+                    <button type="submit" class="btn-abrir" id="abrirModal"> Entrar </button>
+                </div>
             </div>
 
             <div class="modal-overlay" id="modalOverlay">
                 <div class="modal-content">
                     <button class="btn-fechar" id="fecharModal">&times;</button>
                     <h2>Olá, <span>(Nome do Usuário)</span>!</h2>
-                    <p>Bem-Vindo de volta, espero que seu dia de trabalho seja maravilhoso. 💕</p>
+                    <p>Bem-vindo de volta, espero que seu dia de trabalho seja maravilhoso. 💕</p>
                     <a href="../html/index.html">Continuar</a>
                 </div>
             </div>
+
         </div>
     </main>
     <script src="../script/login.js"></script>
