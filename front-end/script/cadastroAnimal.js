@@ -7,8 +7,8 @@ var btnCancelarCadastro = document.getElementById("btnCancelarCadastro");
 var modalSucesso = document.getElementById("modalSucesso");
 var btnFecharSucesso = document.getElementById("btnFecharSucesso");
 
-var formCadastroDono = document.getElementById("formCadastroDono");
-var corpoTabelaDonos = document.getElementById("corpoTabelaDonos");
+var formCadastroAnimal = document.getElementById("formCadastroAnimal");
+var corpoTabelaAnimais = document.getElementById("corpoTabelaAnimais");
 var tabelaVazia = document.getElementById("tabelaVazia");
 
 var campoNascimento = document.getElementById("nascimentoAnimal");
@@ -21,18 +21,11 @@ var tituloModalSucesso = document.getElementById("tituloModalSucesso");
 var textoModalSucesso = document.getElementById("textoModalSucesso");
 
 
-// lista que guarda todos os cadastros (começa com dois exemplos)
-var listaDonos = [
+// lista que guarda todos os animais cadastrados (começa com dois exemplos)
+var listaAnimais = [
     {
-        nomeCompleto: "Marcos Andrade",
-        cpf: "111.222.333-44",
-        rg: "11.222.333-4",
-        telefoneDono: "(19) 99876-5432",
-        endereco: "Rua das Palmeiras",
-        numero: "120",
-        bairro: "Centro",
-        cidade: "Piracicaba",
-        cep: "13400-000",
+        nomeTutor: "Marcos Andrade",
+        telefoneTutor: "(19) 99876-5432",
         nomeAnimal: "Thor",
         especieAnimal: "Cachorro",
         racaAnimal: "Labrador",
@@ -41,15 +34,8 @@ var listaDonos = [
         observacoes: ""
     },
     {
-        nomeCompleto: "Fernanda Lima",
-        cpf: "555.666.777-88",
-        rg: "55.666.777-8",
-        telefoneDono: "(19) 98765-1234",
-        endereco: "Av. Independência",
-        numero: "45",
-        bairro: "Jardim América",
-        cidade: "Piracicaba",
-        cep: "13401-000",
+        nomeTutor: "Fernanda Lima",
+        telefoneTutor: "(19) 98765-1234",
         nomeAnimal: "Mimi",
         especieAnimal: "Gato",
         racaAnimal: "Persa",
@@ -68,7 +54,7 @@ var indiceEmEdicao = -1;
 btnAbrirCadastro.addEventListener("click", function () {
     modoEdicao = false;
     indiceEmEdicao = -1;
-    formCadastroDono.reset();
+    formCadastroAnimal.reset();
     campoIdade.value = "";
     tituloModalCadastro.textContent = "Novo Cadastro";
     btnSalvarCadastro.textContent = "Salvar Cadastro";
@@ -88,7 +74,7 @@ btnCancelarCadastro.addEventListener("click", function () {
 // função para fechar o modal e limpar o formulário
 function fecharModalDeCadastro() {
     modalCadastro.classList.remove("active");
-    formCadastroDono.reset();
+    formCadastroAnimal.reset();
     campoIdade.value = "";
     modoEdicao = false;
     indiceEmEdicao = -1;
@@ -141,7 +127,7 @@ function calcularIdadeAnimal(dataTexto) {
 
 
 // quando o formulário for enviado (tanto para cadastrar quanto para editar)
-formCadastroDono.addEventListener("submit", function (evento) {
+formCadastroAnimal.addEventListener("submit", function (evento) {
 
     // impede o recarregamento da página
     evento.preventDefault();
@@ -157,15 +143,8 @@ formCadastroDono.addEventListener("submit", function (evento) {
 
     // monta um objeto com todos os dados digitados no formulário
     var dadosCadastro = {
-        nomeCompleto: document.getElementById("nomeCompleto").value,
-        cpf: document.getElementById("cpf").value,
-        rg: document.getElementById("rg").value,
-        telefoneDono: document.getElementById("telefoneDono").value,
-        endereco: document.getElementById("endereco").value,
-        numero: document.getElementById("numero").value,
-        bairro: document.getElementById("bairro").value,
-        cidade: document.getElementById("cidade").value,
-        cep: document.getElementById("cep").value,
+        nomeTutor: document.getElementById("nomeTutor").value,
+        telefoneTutor: document.getElementById("telefoneTutor").value,
         nomeAnimal: document.getElementById("nomeAnimal").value,
         especieAnimal: document.getElementById("especieAnimal").value,
         racaAnimal: document.getElementById("racaAnimal").value,
@@ -176,16 +155,16 @@ formCadastroDono.addEventListener("submit", function (evento) {
 
     if (modoEdicao === true) {
         // atualiza o cadastro que já existia na lista
-        listaDonos[indiceEmEdicao] = dadosCadastro;
+        listaAnimais[indiceEmEdicao] = dadosCadastro;
 
         tituloModalSucesso.textContent = "Cadastro atualizado com sucesso!";
-        textoModalSucesso.textContent = "As informações do dono e do animal foram atualizadas.";
+        textoModalSucesso.textContent = "As informações do animal foram atualizadas.";
     } else {
         // adiciona um cadastro novo na lista
-        listaDonos.push(dadosCadastro);
+        listaAnimais.push(dadosCadastro);
 
         tituloModalSucesso.textContent = "Cadastro concluído com sucesso!";
-        textoModalSucesso.textContent = "O dono e o animal foram adicionados ao sistema.";
+        textoModalSucesso.textContent = "O animal foi adicionado ao sistema.";
     }
 
     // redesenha a tabela com a lista atualizada
@@ -199,28 +178,31 @@ formCadastroDono.addEventListener("submit", function (evento) {
 });
 
 
-// função que desenha a tabela inteira a partir da lista de donos
+// função que desenha a tabela inteira a partir da lista de animais
 function renderizarTabela() {
 
     // limpa a tabela antes de redesenhar
-    corpoTabelaDonos.innerHTML = "";
+    corpoTabelaAnimais.innerHTML = "";
 
-    for (var i = 0; i < listaDonos.length; i++) {
+    for (var i = 0; i < listaAnimais.length; i++) {
 
-        var dono = listaDonos[i];
+        var animal = listaAnimais[i];
+        var idadeAtual = calcularIdadeAnimal(animal.nascimentoAnimal);
         var novaLinha = document.createElement("tr");
 
         novaLinha.innerHTML =
-            "<td>" + dono.nomeCompleto + "</td>" +
-            "<td>" + dono.nomeAnimal + "</td>" +
-            "<td>" + dono.especieAnimal + "</td>" +
-            "<td>" + dono.telefoneDono + "</td>" +
+            "<td>" + animal.nomeAnimal + "</td>" +
+            "<td>" + animal.especieAnimal + "</td>" +
+            "<td>" + animal.racaAnimal + "</td>" +
+            "<td>" + idadeAtual + "</td>" +
+            "<td>" + animal.nomeTutor + "</td>" +
+            "<td>" + animal.telefoneTutor + "</td>" +
             "<td class='coluna-acoes'>" +
                 "<button type='button' class='btn-editar' onclick='editarCadastro(" + i + ")'>Editar</button>" +
                 "<button type='button' class='btn-excluir' onclick='excluirCadastro(" + i + ")'>Excluir</button>" +
             "</td>";
 
-        corpoTabelaDonos.appendChild(novaLinha);
+        corpoTabelaAnimais.appendChild(novaLinha);
     }
 
     atualizarTabelaVazia();
@@ -230,31 +212,24 @@ function renderizarTabela() {
 // função chamada ao clicar em "Editar": abre o modal já preenchido
 function editarCadastro(indice) {
 
-    var dono = listaDonos[indice];
+    var animal = listaAnimais[indice];
 
     // preenche os campos do tutor
-    document.getElementById("nomeCompleto").value = dono.nomeCompleto;
-    document.getElementById("cpf").value = dono.cpf;
-    document.getElementById("rg").value = dono.rg;
-    document.getElementById("telefoneDono").value = dono.telefoneDono;
-    document.getElementById("endereco").value = dono.endereco;
-    document.getElementById("numero").value = dono.numero;
-    document.getElementById("bairro").value = dono.bairro;
-    document.getElementById("cidade").value = dono.cidade;
-    document.getElementById("cep").value = dono.cep;
+    document.getElementById("nomeTutor").value = animal.nomeTutor;
+    document.getElementById("telefoneTutor").value = animal.telefoneTutor;
 
     // preenche os campos do animal
-    document.getElementById("nomeAnimal").value = dono.nomeAnimal;
-    document.getElementById("especieAnimal").value = dono.especieAnimal;
-    document.getElementById("racaAnimal").value = dono.racaAnimal;
-    document.getElementById("observacoes").value = dono.observacoes;
-    campoNascimento.value = dono.nascimentoAnimal;
-    campoIdade.value = calcularIdadeAnimal(dono.nascimentoAnimal);
+    document.getElementById("nomeAnimal").value = animal.nomeAnimal;
+    document.getElementById("especieAnimal").value = animal.especieAnimal;
+    document.getElementById("racaAnimal").value = animal.racaAnimal;
+    document.getElementById("observacoes").value = animal.observacoes;
+    campoNascimento.value = animal.nascimentoAnimal;
+    campoIdade.value = calcularIdadeAnimal(animal.nascimentoAnimal);
 
     // marca o botão de sexo correto
     var radiosSexo = document.getElementsByName("sexoAnimal");
     for (var i = 0; i < radiosSexo.length; i++) {
-        if (radiosSexo[i].value === dono.sexoAnimal) {
+        if (radiosSexo[i].value === animal.sexoAnimal) {
             radiosSexo[i].checked = true;
         }
     }
@@ -272,14 +247,14 @@ function editarCadastro(indice) {
 
 // função chamada ao clicar em "Excluir"
 function excluirCadastro(indice) {
-    listaDonos.splice(indice, 1);
+    listaAnimais.splice(indice, 1);
     renderizarTabela();
 }
 
 
-// mostra a mensagem "nenhum dono cadastrado" quando a tabela estiver vazia
+// mostra a mensagem "nenhum animal cadastrado" quando a tabela estiver vazia
 function atualizarTabelaVazia() {
-    if (listaDonos.length === 0) {
+    if (listaAnimais.length === 0) {
         tabelaVazia.style.display = "block";
     } else {
         tabelaVazia.style.display = "none";
